@@ -39,7 +39,15 @@ public class Dealership {
         this.phone = phone;
     }
 
-    public List<Vehicle>
+    public List<Vehicle> addVehicle(Vehicle vehicle) {
+        inventory.add(vehicle);
+    }
+
+    public List<Vehicle> getAllVehicles() {
+        return inventory;
+    }
+
+    public
 
 
 }
