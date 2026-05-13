@@ -54,7 +54,7 @@ public class Dealership {
     }
 
     public List<Vehicle> getVehiclesByPrice (double min, double max) {
-        return null;
+
     }
 
     public List<Vehicle> getVehiclesByMakeModel (String make, String model) {
