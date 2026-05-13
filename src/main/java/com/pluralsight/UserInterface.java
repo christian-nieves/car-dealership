@@ -45,7 +45,7 @@ public class UserInterface {
                 case 7 -> processGetAllVehiclesRequest();
                 case 8 -> processAddVehicleRequest();
                 case 9 -> processRemoveVehicleRequest();
-                case 0 -> System.out.println("Thank you for visiting " + dealership.getName() + "!");
+                case 99 -> System.out.println("Thank you for visiting " + dealership.getName() + "!");
                 default -> System.err.println("Invalid choice!");
             }
         } myScanner.close();
