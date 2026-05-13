@@ -73,27 +73,67 @@ public class UserInterface {
 
     public void processGetByPriceRequest() {
 
+        System.out.print("Enter Minimum price: ");
+        double min = myScanner.nextDouble();
+
+        System.out.print("Enter Maximum price: ");
+        double max = myScanner.nextDouble();
+        myScanner.nextLine();
+
+        displayVehicles(dealership.getVehiclesByPrice(min, max));
     }
+
     public void processGetByMakeModelRequest() {
 
+        System.out.print("Enter Make: ");
+        String make = myScanner.nextLine();
+
+        System.out.print("Enter Model: ");
+        String model = myScanner.nextLine();
+
+        displayVehicles(dealership.getVehiclesByMakeModel(make, model));
     }
+
     public void processGetByYearRequest() {
 
+        System.out.print("Enter Minimum Year: ");
+        int min = myScanner.nextInt();
+        myScanner.nextLine();
+
+        System.out.print("Enter Maximum Year: ");
+        int max = myScanner.nextInt();
+        myScanner.nextLine();
+
+        displayVehicles(dealership.getVehiclesByYear(min, max));
     }
+
     public void processGetByColorRequest() {
 
+        System.out.print("Enter Color: ");
+        String color = myScanner.nextLine();
+
+        displayVehicles(dealership.getVehiclesByColor(color));
     }
+
     public void processGetByMileageRequest() {
 
+        System.out.print("Enter Minimum Mileage: ");
+        int min = myScanner.nextInt();
+        myScanner.nextLine();
+
+        System.out.print("Enter Maximum Mileage: ");
+        int max = myScanner.nextInt();
+        myScanner.nextLine();
+
+        displayVehicles(dealership.getVehiclesByMileage(min, max));
     }
+
     public void processGetByVehicleTypeRequest() {
 
-    }
-    public void processAddVehicleRequest() {
+        System.out.print("Enter Vehicle Type (Car | Truck | SUV | Van): ");
+        String type = myScanner.nextLine();
 
-    }
-    public void processRemoveVehicleRequest() {
-
+        displayVehicles(dealership.getVehiclesByType(type));
     }
 }
 
