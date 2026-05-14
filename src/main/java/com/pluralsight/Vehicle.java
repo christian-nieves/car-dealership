@@ -21,7 +21,7 @@ public class Vehicle {
         this.odometer = odometer;
         this.price = price;
     }
-
+ // getters and setters
     public int getVin() {
         return vin;
     }
