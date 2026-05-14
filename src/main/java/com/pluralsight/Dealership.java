@@ -9,6 +9,7 @@ public class Dealership {
     private String phone;
     private ArrayList<Vehicle> inventory;
 
+    // Vehicle dealership
     public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
@@ -40,20 +41,21 @@ public class Dealership {
         this.phone = phone;
     }
 
-    //
+    // methods
 
     public List<Vehicle> getAllVehicles() {
-        return inventory;
+        return inventory; // returns entire inventory
     }
 
     public void addVehicle(Vehicle vehicle) {
-        inventory.add(vehicle);
+        inventory.add(vehicle); // adds vehicle to inventory
     }
 
     public void removeVehicle(Vehicle vehicle) {
-        inventory.remove(vehicle);
+        inventory.remove(vehicle); // removes vehicle from inventory
     }
 
+    // method that sorts vehicles by price
     public List<Vehicle> getVehiclesByPrice (double min, double max) {
         List<Vehicle> list = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
@@ -64,6 +66,7 @@ public class Dealership {
         return list;
     }
 
+    // method that sorts vehicles by make and model
     public List<Vehicle> getVehiclesByMakeModel (String make, String model) {
         List<Vehicle> list = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
@@ -74,6 +77,7 @@ public class Dealership {
         return list;
     }
 
+    // method that sorts vehicles by year
     public List<Vehicle> getVehiclesByYear (int min, int max) {
         List<Vehicle> list = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
@@ -84,6 +88,7 @@ public class Dealership {
         return list;
     }
 
+    // method that sorts vehicle by color
     public List<Vehicle> getVehiclesByColor (String color) {
         List<Vehicle> list = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
@@ -94,6 +99,7 @@ public class Dealership {
         return list;
     }
 
+    // method that sorts vehicles by mileage
     public List<Vehicle> getVehiclesByMileage (int min, int max) {
         List<Vehicle> list = new ArrayList<>();
         for (Vehicle vehicle : inventory) {
@@ -104,6 +110,7 @@ public class Dealership {
         return list;
     }
 
+    // method that sorts vehicle by vehicle type
     public List<Vehicle> getVehiclesByType (String vehicleType) {
         List<Vehicle> list = new ArrayList<>();
         for (Vehicle vehicle : inventory) {

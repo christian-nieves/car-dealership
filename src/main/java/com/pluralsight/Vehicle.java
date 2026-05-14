@@ -10,6 +10,7 @@ public class Vehicle {
     private int odometer;
     private double price;
 
+    // Vehicle constructor
     public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, double price) {
         this.vin = vin;
         this.year = year;
@@ -85,6 +86,7 @@ public class Vehicle {
         this.price = price;
     }
 
+    // to string so that vehicles always print in this format
     @Override
     public String toString() {
         return "Vin: " + vin + " | " + "Year: " +  year + " | " + "Make: " +  make + " | " + "Model: " + model + " | " +
