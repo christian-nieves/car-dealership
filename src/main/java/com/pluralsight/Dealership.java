@@ -51,7 +51,6 @@ public class Dealership {
     }
 
     public void removeVehicle(Vehicle vehicle) {
-
         inventory.remove(vehicle);
     }
 
