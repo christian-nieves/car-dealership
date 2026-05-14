@@ -13,6 +13,7 @@ public class Dealership {
         this.name = name;
         this.address = address;
         this.phone = phone;
+        this.inventory = new ArrayList<>();
     }
 
     public String getName() {
@@ -51,6 +52,7 @@ public class Dealership {
 
     public void removeVehicle(Vehicle vehicle) {
 
+        inventory.remove(vehicle);
     }
 
     public List<Vehicle> getVehiclesByPrice (double min, double max) {
@@ -112,5 +114,4 @@ public class Dealership {
         }
         return list;
     }
-
 }

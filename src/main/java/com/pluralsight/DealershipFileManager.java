@@ -1,8 +1,6 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 
 public class DealershipFileManager {
 
@@ -40,6 +38,31 @@ public class DealershipFileManager {
     }
 
     public void saveDealership(Dealership dealership) {
+        try {
+            PrintWriter writer = new PrintWriter(new FileWriter(fileName));
 
+            writer.println(dealership.getName() + "|" +
+                    dealership.getAddress() + "|" +
+                    dealership.getPhone());
+
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+                writer.println(vehicle.getVin() + "|" +
+                        vehicle.getYear() + "|" +
+                        vehicle.getMake() + "|" +
+                        vehicle.getModel() + "|" +
+                        vehicle.getVehicleType() + "|" +
+                        vehicle.getColor() + "|" +
+                        vehicle.getOdometer() + "|" +
+                        vehicle.getPrice());
+            }
+            writer.close();
+            System.out.println("Dealership saved successfully!");
+
+        } catch (Exception e) {
+            System.err.println("Error saving file: " + e.getMessage());
+        }
     }
+
+
 }
+

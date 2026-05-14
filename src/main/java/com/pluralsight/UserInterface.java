@@ -135,5 +135,57 @@ public class UserInterface {
 
         displayVehicles(dealership.getVehiclesByType(type));
     }
+
+    public void processAddVehicleRequest(){
+
+        System.out.print("Enter VIN: ");
+        int vin = myScanner.nextInt();
+        myScanner.nextLine();
+
+        System.out.print("Enter Year: ");
+        int year = myScanner.nextInt();
+        myScanner.nextLine();
+
+        System.out.print("Enter Make: ");
+        String make = myScanner.nextLine();
+
+        System.out.print("Enter Model: ");
+        String model = myScanner.nextLine();
+
+        System.out.print("Enter Vehicle Type (car, truck, SUV, van): ");
+        String type = myScanner.nextLine();
+
+        System.out.print("Enter Color: ");
+        String color = myScanner.nextLine();
+
+        System.out.print("Enter Odometer: ");
+        int odometer = myScanner.nextInt();
+        myScanner.nextLine();
+
+        System.out.print("Enter Price: ");
+        double price = myScanner.nextDouble();
+        myScanner.nextLine();
+
+        Vehicle vehicle = new Vehicle(vin, year, make, model, type, color, odometer, price);
+        dealership.addVehicle(vehicle);
+        new DealershipFileManager().saveDealership(dealership);
+        System.out.println("Vehicle added successfully!");
+    }
+
+    public void processRemoveVehicleRequest() {
+        System.out.print("Enter VIN of vehicle to remove: ");
+        int vin = myScanner.nextInt();
+        myScanner.nextLine();
+
+        for (Vehicle vehicle : dealership.getAllVehicles()) {
+            if (vehicle.getVin() == vin) {
+                dealership.removeVehicle(vehicle);
+                new DealershipFileManager().saveDealership(dealership);
+                System.out.println("Vehicle removed successfully!");
+                return;
+            }
+        }
+        System.out.println("Vehicle with VIN " + vin + " not found.");
+    }
 }
 
